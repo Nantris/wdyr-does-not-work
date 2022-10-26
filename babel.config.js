@@ -4,10 +4,16 @@ module.exports = function(api) {
     presets: [
       ['babel-preset-expo',
         {
-          jsxRuntime: 'automatic',
-          jsxImportSource: '@welldone-software/why-did-you-render',
+          useTransformReactJSXExperimental: true
         },
       ]
     ],
+    plugins: [
+      ["@babel/plugin-transform-react-jsx", {
+        runtime: "automatic",
+        importSource: "@welldone-software/why-did-you-render",
+        development: true,
+      }],
+    ]
   };
 };
